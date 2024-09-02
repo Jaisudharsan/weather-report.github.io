@@ -1,5 +1,5 @@
 function getWeatherForecast() {
-    const apiKey = 'APIKEY';
+    const apiKey = 'b337af2a709741b5a5ca85178e6cfdf0';
     const locationInput = document.getElementById('locationInput').value;
     const apiUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${locationInput}&key=${apiKey}&days=5`;
     fetch(apiUrl)
