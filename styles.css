@@ -1,7 +1,10 @@
+/* Global Styles */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e0e7ff; /* Fallback background color */
 }
 
 .background-image {
@@ -9,43 +12,73 @@ body, html {
     background-size: cover;
     background-position: center;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8); 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9); 
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
 }
 
 h1 {
     margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #0056b3;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 input[type="text"] {
     width: 70%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
 }
 
 #currentWeather {
     margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
 }
 
 #weatherInfo {
@@ -56,14 +89,71 @@ button:hover {
 
 .forecast-day {
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f9f9f9;
     text-align: center;
     width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.forecast-day:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .forecast-day p {
     margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .forecast-day {
+        width: 130px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    input[type="text"] {
+        width: 90%;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .forecast-day {
+        width: 100px;
+        padding: 8px;
+    }
 }
