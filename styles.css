@@ -8,7 +8,7 @@ body, html {
 }
 
 .background-image {
-    background-image: url('weather.jpg'); 
+    background-image: url('weatherforecast.png'); 
     background-size: cover;
     background-position: center;
     height: 100%;
